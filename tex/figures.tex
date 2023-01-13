@@ -1,0 +1,74 @@
+\documentclass{standalone}
+\usepackage{bytefield}
+
+\begin{document}
+
+\begin{bytefield}{16}
+    \wordbox{1}{32-byte channel id} \\
+    \wordbox{1}{32-byte checksum} && \bitbox{4}{\tiny 4 \\ byte \\ ver.} \\
+    \wordbox[lrt]{1}{Packet payload} \\
+    \skippedwords \\
+    \wordbox[lrb]{1}{}
+\end{bytefield}
+
+% \begin{bytefield}{16}
+%     \begin{rightwordgroup}{1500 bytes max \\ MTU}
+%         \wordbox{1}{32-byte channel id} \\
+%         \wordbox{1}{32-byte checksum} \\
+%         \wordbox[lrt]{1}{Packet payload} \\
+%         \skippedwords \\
+%         \wordbox[lrb]{1}{}
+%     \end{rightwordgroup}
+% \end{bytefield}
+
+% \begin{bytefield}{16}
+%     \wordbox{1}{32-byte receiver node id} \\
+%     \wordbox{1}{32-byte sender pubkey} && \bitbox{4}{\tiny 4 \\ byte \\ ver.} \\
+%     \wordbox{1}{32-byte checksum} \\
+%     \wordbox[lrt]{1}{Packet payload} \\
+%     \skippedwords \\
+%     \wordbox[lrb]{1}{}
+% \end{bytefield}
+
+% \begin{bytefield}{16}
+%     \begin{rightwordgroup}{1500 bytes max \\ MTU}
+%         \wordbox{1}{32-byte receiver node id} \\
+%         \wordbox{1}{32-byte sender pubkey} \\
+%         \wordbox{1}{32-byte checksum} \\
+%         \wordbox[lrt]{1}{Packet payload} \\
+%         \skippedwords \\
+%         \wordbox[lrb]{1}{}
+%     \end{rightwordgroup}
+% \end{bytefield}
+
+% \begin{figure}[h]
+%     \centering
+%     \begin{minipage}{0.3\textwidth}
+%         \centering
+%         \begin{bytefield}{16}
+%             \begin{rightwordgroup}{1500 bytes max \\ MTU}
+%                 \wordbox{1}{32-byte receiver node id} \\
+%                 \wordbox{1}{32-byte sender pubkey} \\
+%                 \wordbox{1}{32-byte checksum} \\
+%                 \wordbox[lrt]{1}{Packet payload} \\
+%                 \skippedwords \\
+%                 \wordbox[lrb]{1}{}
+%             \end{rightwordgroup}
+%         \end{bytefield}
+%         \caption{original}
+%     \end{minipage}\hfill
+%     \begin{minipage}{0.3\textwidth}
+%         \centering
+%         \begin{bytefield}{16}
+%             \wordbox{1}{32-byte receiver node id} \\
+%             \wordbox{1}{32-byte sender pubkey} && \bitbox{2}{\tiny 2 \\ byte \\ ver.} \\
+%             \wordbox{1}{32-byte checksum} \\
+%             \wordbox[lrt]{1}{Packet payload} \\
+%             \skippedwords \\
+%             \wordbox[lrb]{1}{}
+%         \end{bytefield}
+%         \caption{with version}
+%     \end{minipage}
+% \end{figure}
+
+\end{document}
